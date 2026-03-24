@@ -1,0 +1,21 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+
+#pragma once
+
+
+#define DYNAMIC_KEYMAP_LAYER_COUNT 10
+#define F_CPU 200000000
+#define MATRIX_SCAN_INTERVAL 8000
+#define USB_POLLING_INTERVAL_MS 1
+#define FORCE_NKRO
+
+#define SPLIT_TRANSPORT_MIRROR
+#define SPLIT_LAYER_STATE_ENABLE
+#define SPLIT_MODS_ENABLE
+#define SPLIT_WPM_ENABLE
+#define SPLIT_ACTIVITY_ENABLE
+#define SPLIT_LED_STATE_ENABLE
+
+#define SCAN_RATE 1
+// Offer both modes and let you switch or auto-select
+//#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE
