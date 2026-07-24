@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#include "config_common.h"
 
+#define F_CPU 200000000
+#define MATRIX_IO_DELAY 1
 /* key matrix size */
 // Rows are doubled-up
 #define MATRIX_ROWS 14
@@ -37,5 +39,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_ROW_RIGHT 7
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 6
 
-//#define SPLIT_USB_TIMEOUT 1000
-//#define SPLIT_USB_POLL 10
+#define SPLIT_USB_TIMEOUT 1000
+#define SPLIT_USB_POLL 1
