@@ -39,5 +39,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_ROW_RIGHT 7
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 6
 
-#define SPLIT_USB_TIMEOUT 1000
+#define SPLIT_USB_TIMEOUT 3500
 #define SPLIT_USB_POLL 1
