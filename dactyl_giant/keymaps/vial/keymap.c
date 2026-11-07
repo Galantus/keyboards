@@ -32,13 +32,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [3] = LAYOUT(
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-	_______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,                                 _______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,                                 _______,_______,_______,_______,_______,_______,                            		        _______,_______,_______,_______,                                 _______,_______,_______,_______
-),
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_NO, KC_NO, KC_NO,
+        KC_NO, LSFT(KC_MINUS), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), KC_NO,
+        KC_BSPACE, LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), KC_NO,
+        KC_LSHIFT, LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_NO), LSFT(KC_2), KC_RSHIFT,
+        KC_LCTRL, KC_NO, KC_NO, KC_NO, KC_NO, KC_SPACE, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_ENTER, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO
+    ),
 
 	[4] = LAYOUT(
         _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
