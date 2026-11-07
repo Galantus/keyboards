@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_WATCHDOG_ENABLE
 #define SPLIT_WATCHDOG_TIMEOUT 3000
 
-#define MATRIX_SCAN_INTERVAL 8000
+// MATRIX_SCAN_INTERVAL is not a supported Vial-QMK option (removed no-op).
 #define USB_POLLING_INTERVAL_MS 1
 
 // Defaults imported from vial_layout.vil (QMK Settings).
@@ -49,6 +49,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // existing saved settings are not overwritten.
 #define COMBO_TERM 200
 #define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY // Respect each Vial Tap Dance tapping term.
 #define AUTO_SHIFT_TIMEOUT 175
 #define ONESHOT_TAP_TOGGLE 5
 #define ONESHOT_TIMEOUT 5000
