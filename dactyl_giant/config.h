@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 //#include "config_common.h"
 
-#define F_CPU 200000000
 #define MATRIX_IO_DELAY 1
 /* key matrix size */
 // Rows are doubled-up
@@ -32,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { GP16,GP17,GP18,GP19,GP20,GP21,GP22}
 #define DIODE_DIRECTION COL2ROW
 
-#define SOFT_SERIAL_PIN GP0
+#define SOFT_SERIAL_PIN GP1
 
 #define SPLIT_HAND_PIN GP28
 
