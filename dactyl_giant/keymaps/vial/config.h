@@ -49,7 +49,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // existing saved settings are not overwritten.
 #define COMBO_TERM 200
 #define TAPPING_TERM 200
-#define TAPPING_TERM_PER_KEY // Respect each Vial Tap Dance tapping term.
+// Vial-QMK automatically sets TAPPING_TERM_PER_KEY when Tap Dance is enabled.
+// Do not redefine it here (builddefs/build_vial.mk supplies -DTAPPING_TERM_PER_KEY).
 #define AUTO_SHIFT_TIMEOUT 175
 #define ONESHOT_TAP_TOGGLE 5
 #define ONESHOT_TIMEOUT 5000
