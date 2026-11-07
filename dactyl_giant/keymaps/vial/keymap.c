@@ -109,6 +109,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #include "dynamic_keymap.h"
 #include "vial.h"
+
+_Static_assert(DYNAMIC_KEYMAP_LAYER_COUNT == 10, "Vial export contains exactly 10 layers");
+_Static_assert(DYNAMIC_KEYMAP_MACRO_COUNT >= 4, "Vial export uses M0 through M3");
+#ifdef VIAL_COMBO_ENABLE
+_Static_assert(VIAL_COMBO_ENTRIES >= 11, "Vial export contains 11 combos");
+#endif
+#ifdef VIAL_TAP_DANCE_ENABLE
+_Static_assert(VIAL_TAP_DANCE_ENTRIES >= 3, "Vial export contains 3 tap dances");
+#endif
 #ifdef QMK_SETTINGS
 #    include "qmk_settings.h"
 #endif
