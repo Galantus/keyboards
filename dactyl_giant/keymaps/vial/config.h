@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_USB_DETECT
 
 #define SPLIT_HAND_PIN GP28
-#define SOFT_SERIAL_PIN GP0
+#define SOFT_SERIAL_PIN GP1
 
 // fix for device detection after cold boot
 // https://github.com/qmk/qmk_firmware/issues/18511#issuecomment-1264604610
