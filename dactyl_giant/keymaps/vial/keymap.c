@@ -110,6 +110,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Seed the exported Vial tap dances only when all three slots are empty.
 // Existing user-defined Vial tap dances are preserved.
 void keyboard_post_init_user(void) {
+
+#ifdef VIAL_ENABLE
+    // Vial macro storage is a sequence of NUL-terminated macro programs.
+    // Seed only a completely empty buffer; never replace user-edited macros.
+    uint8_t first_macro_byte = 0;
+    dynamic_keymap_macro_get_buffer(0, 1, &first_macro_byte);
+    if (first_macro_byte == 0 && dynamic_keymap_macro_get_buffer_size() >= 64) {
+        bool macro_storage_empty = true;
+        for (uint16_t offset = 0; offset < dynamic_keymap_macro_get_buffer_size(); ++offset) {
+            uint8_t value = 0;
+            dynamic_keymap_macro_get_buffer(offset, 1, &value);
+            if (value != 0) {
+                macro_storage_empty = false;
+                break;
+            }
+        }
+        if (macro_storage_empty) {
+            // Extended Vial keycodes use little-endian 16-bit values.
+            // The four programs match vial_layout.vil macros M0..M3.
+            const uint8_t macro_defaults[] = {
+                SS_QMK_PREFIX, VIAL_MACRO_EXT_DOWN, (uint8_t)MO(1), (uint8_t)(MO(1) >> 8),
+                SS_QMK_PREFIX, SS_DOWN_CODE, KC_CAPSLOCK, 0,
+                SS_QMK_PREFIX, SS_DOWN_CODE, KC_LCTRL,
+                SS_QMK_PREFIX, SS_DOWN_CODE, KC_BSPACE,
+                SS_QMK_PREFIX, SS_UP_CODE, KC_LCTRL,
+                SS_QMK_PREFIX, SS_UP_CODE, KC_BSPACE, 0,
+                SS_QMK_PREFIX, SS_TAP_CODE, KC_CAPSLOCK,
+                SS_QMK_PREFIX, VIAL_MACRO_EXT_TAP, (uint8_t)MO(2), (uint8_t)(MO(2) >> 8), 0,
+                'Z', 'Z', 0
+            };
+            dynamic_keymap_macro_set_buffer(0, sizeof(macro_defaults), (uint8_t *)macro_defaults);
+        }
+    }
+#endif
+
 #ifdef VIAL_COMBO_ENABLE
     // Import combos only when no Vial combo slot has been configured.
     bool combos_empty = true;
