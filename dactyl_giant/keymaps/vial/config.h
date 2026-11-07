@@ -41,5 +41,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_WATCHDOG_ENABLE
 #define SPLIT_WATCHDOG_TIMEOUT 3000
 
-#define MATRIX_SCAN_INTERVAL 50000
+#define MATRIX_SCAN_INTERVAL 8000
 #define USB_POLLING_INTERVAL_MS 1
