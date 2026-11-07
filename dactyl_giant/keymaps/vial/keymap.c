@@ -102,13 +102,55 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+#include "dynamic_keymap.h"
+#include "vial.h"
+
 #ifdef VIAL_TAP_DANCE_ENABLE
-#    include "dynamic_keymap.h"
-#    include "vial.h"
 
 // Seed the exported Vial tap dances only when all three slots are empty.
 // Existing user-defined Vial tap dances are preserved.
 void keyboard_post_init_user(void) {
+#ifdef VIAL_COMBO_ENABLE
+    // Import combos only when no Vial combo slot has been configured.
+    bool combos_empty = true;
+    for (uint8_t i = 0; i < VIAL_COMBO_ENTRIES; ++i) {
+        vial_combo_entry_t current;
+        if (dynamic_keymap_get_combo(i, &current) != 0) {
+            combos_empty = false;
+            break;
+        }
+        for (uint8_t key = 0; key < 4; ++key) {
+            if (current.input[key] != KC_NO) {
+                combos_empty = false;
+            }
+        }
+        if (current.output != KC_NO) {
+            combos_empty = false;
+        }
+        if (!combos_empty) {
+            break;
+        }
+    }
+    if (combos_empty) {
+        const vial_combo_entry_t defaults[] = {
+        {{KC_RALT, KC_7, KC_NO, KC_NO}, DYN_REC_START1},
+        {{KC_RALT, KC_HOME, KC_NO, KC_NO}, DYN_REC_STOP},
+        {{KC_RALT, KC_END, KC_NO, KC_NO}, DYN_MACRO_PLAY1},
+        {{KC_LALT, KC_6, KC_NO, KC_NO}, DYN_REC_START2},
+        {{KC_LALT, KC_PGUP, KC_NO, KC_NO}, DYN_REC_STOP},
+        {{KC_LALT, KC_PGDOWN, KC_NO, KC_NO}, DYN_MACRO_PLAY2},
+        {{KC_LALT, KC_LSHIFT, KC_NO, KC_NO}, M(2)},
+        {{KC_ENTER, TD(2), KC_NO, KC_NO}, TG(8)},
+        {{KC_LALT, KC_APPLICATION, KC_NO, KC_NO}, QK_BOOT},
+        {{KC_RALT, KC_PSCREEN, KC_NO, KC_NO}, QK_BOOT},
+        {{KC_ESCAPE, KC_APPLICATION, KC_NO, KC_NO}, QK_REBOOT},
+        };
+        for (uint8_t i = 0; i < sizeof(defaults) / sizeof(defaults[0]); ++i) {
+            dynamic_keymap_set_combo(i, &defaults[i]);
+        }
+    }
+#endif
+
     const vial_tap_dance_entry_t defaults[] = {
         {KC_NO, MO(5), TG(4), MO(8), 200},
         {TG(6), KC_NO, TG(7), KC_NO, 200},
@@ -128,4 +170,3 @@ void keyboard_post_init_user(void) {
         dynamic_keymap_set_tap_dance(i, &defaults[i]);
     }
 }
-#endif
