@@ -92,11 +92,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
 	[9] = LAYOUT(
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-	_______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,_______,                 _______,_______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,                                 _______,_______,_______,_______,_______,_______,
-        _______,_______,_______,_______,_______,_______,                                 _______,_______,_______,_______,_______,_______,                            		        _______,_______,_______,_______,                                 _______,_______,_______,_______
-)
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO 
+    )
 };
