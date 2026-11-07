@@ -101,3 +101,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO 
     )
 };
+
+#ifdef VIAL_TAP_DANCE_ENABLE
+#    include "dynamic_keymap.h"
+#    include "vial.h"
+
+// Seed the exported Vial tap dances only when all three slots are empty.
+// Existing user-defined Vial tap dances are preserved.
+void keyboard_post_init_user(void) {
+    const vial_tap_dance_entry_t defaults[] = {
+        {KC_NO, MO(5), TG(4), MO(8), 200},
+        {TG(6), KC_NO, TG(7), KC_NO, 200},
+        {KC_COPY, KC_NO, KC_PSTE, KC_NO, 200},
+    };
+
+    for (uint8_t i = 0; i < 3; ++i) {
+        vial_tap_dance_entry_t current;
+        if (dynamic_keymap_get_tap_dance(i, &current) != 0 ||
+            current.on_tap != KC_NO || current.on_hold != KC_NO ||
+            current.on_double_tap != KC_NO || current.on_tap_hold != KC_NO) {
+            return;
+        }
+    }
+
+    for (uint8_t i = 0; i < 3; ++i) {
+        dynamic_keymap_set_tap_dance(i, &defaults[i]);
+    }
+}
+#endif
