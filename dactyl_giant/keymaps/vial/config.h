@@ -43,3 +43,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MATRIX_SCAN_INTERVAL 8000
 #define USB_POLLING_INTERVAL_MS 1
+
+// Defaults imported from vial_layout.vil (QMK Settings).
+// These take effect when Vial/QMK settings are initialized or reset;
+// existing saved settings are not overwritten.
+#define COMBO_TERM 200
+#define TAPPING_TERM 200
+#define AUTO_SHIFT_TIMEOUT 175
+#define ONESHOT_TAP_TOGGLE 5
+#define ONESHOT_TIMEOUT 5000
+#define MOUSEKEY_DELAY 10
+#define MOUSEKEY_INTERVAL 20
+#define MOUSEKEY_MOVE_DELTA 5
+#define MOUSEKEY_MAX_SPEED 10
+#define MOUSEKEY_TIME_TO_MAX 20
+#define MOUSEKEY_WHEEL_DELAY 100
+#define MOUSEKEY_WHEEL_INTERVAL 80
+#define MOUSEKEY_WHEEL_MAX_SPEED 8
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 40
+#define TAP_CODE_DELAY 0
+#define TAP_HOLD_CAPS_DELAY 80
+#define TAPPING_TOGGLE 5
