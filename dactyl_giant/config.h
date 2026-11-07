@@ -39,4 +39,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BOOTMAGIC_LITE_COLUMN_RIGHT 6
 
 #define SPLIT_USB_TIMEOUT 2500
-#define SPLIT_USB_POLL 1
+// Documented master/slave detection polling interval, in milliseconds.
+#define SPLIT_USB_TIMEOUT_POLL 10
