@@ -1,5 +1,4 @@
 #include QMK_KEYBOARD_H
-#include "vial_ensure_keycode.h" // Legacy keycode names exported by Vial
 
 // Vial M0..M49 map to the QK_MACRO keycode range.
 #define VIAL_MACRO(index) (QK_MACRO + (index))
